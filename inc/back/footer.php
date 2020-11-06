@@ -17,9 +17,27 @@
     Todos los derechos reservados a sus respectivos dueños | 2014 - 2020</p>
   <p style="display: block;height: 5px;font-size: 12px;margin-bottom: 0 !important;">Design by Assam | Programmed by
     Kakashi</p>
-
-
 </footer>
+
+<div class="modal fade" id="data" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -51,6 +69,7 @@ integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZf
     },
   });
 </script>
+<script src="/"></script>
 <script>
   $(".owl-two").owlCarousel({
     loop: true,
@@ -83,7 +102,22 @@ integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZf
       },
     },
   });
+  
 
+  $(document).ready(function () {
+	  $('[data-toggle="popover"]').popover();
+    $(".btn-x").click(function() {
+      // $.ajax({
+      //   type: "POST",
+      //   url: "peticiones/eventos.php",
+      //   data: {id: 1},
+      //   success: function(data){
+      //     alert("Ha sido ejecutada la acción.");
+      //     console.log(data);
+      //   }
+      // });
+    }
+  });
 </script>
 
 <!-- clock widget start -->
@@ -117,7 +151,24 @@ integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZf
 </script> -->
 <!-- END SCRIPT -->
 
-
+<script>
+let x = "0dd";
+  $(document).ready(function () {
+    console.log(x);
+    $(".btn-x").click(function() {
+      console.log("uno");
+      // $.ajax({
+      //   type: "POST",
+      //   url: "peticiones/eventos.php",
+      //   data: {id: 1},
+      //   success: function(data){
+      //     alert("Ha sido ejecutada la acción.");
+      //     console.log(data);
+      //   }
+      // });
+    }
+  });
+</script>
 </body>
 
 </html>

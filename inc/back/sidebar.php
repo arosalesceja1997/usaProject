@@ -13,26 +13,26 @@
 	</div>
 	
 	<?php
-        $data = $db->query("SELECT * FROM eventos ORDER BY id DESC LIMIT 3");
+        $data = $db->query("SELECT * FROM `eventos-2` ORDER BY id DESC LIMIT 3");
         foreach ($data as $row) {
-			echo '<div id="articulo" class="mt-1">';
-				echo '<div class="imgg">';
-					echo '<img src="'.$row['imagen'].'" />';
-				echo '</div>';
-				echo '<p class="pg1">';
-				echo $row['titulo'];
-				echo '</p>';
-				echo '<p class="pg2">';
-				echo 'Organiza: <b>'.$row['publicador'].'</b>';
-				echo '</p>';
-			echo '</div>';
+          echo '<div id="articulo" class="mt-1">';
+            echo '<div class="imgg">';
+              echo '<img src="'.$row['imagen'].'" />';
+            echo '</div>';
+            echo '<p class="pg1">';
+            echo $row['titulo'];
+            echo '</p>';
+            echo '<p class="pg2">';
+            echo 'Organiza: <b>'.$row['publicador'].'</b>';
+            echo '</p>';
+          echo '</div>';
         }
 	?>
 	
   </div>
 
   <div id="hobba">
-    <div id="barra-title">
+    <d5iv id="barra-title">
       <div id="img-title">
         <img
           src="https://4.bp.blogspot.com/-98NzMNGUpDs/XJqiNlyTluI/AAAAAAABN0Q/_ICDIhbsXZoAc3HlXA9GuGKug1zbeBQKgCKgBGAs/s1600/15081889415262082.gif"
@@ -42,27 +42,27 @@
         <p id="des1">Destacados LUFantasie</p>
         <p id="des2">¡Nuestra comunidad crece!</p>
       </div>
-    </div>
+    </d5iv>
+    
+    <?php
+      $data = $db->query("SELECT * FROM usuarios WHERE destacados=1 ORDER BY rango LIMIT 3 ");
+      foreach ($data as $row) {
+        echo '<div id="destacados" class="mt-1">' .
+          '<div class="destacados-img">' .
+            '<img src="'.$row['imagen'].'" />'.
+          '</div>'.
+          '<div class="destacados-user" style="font-weight: bolder; margin-top: 7px">'.
+            '<img src="./img/perfil.png" style="margin-top: -5px; padding-right: 10px"/>'.
+            $row['nombre'].
+          '</div>'.
+          '<div class="destacados-user">'.
+            '<img src="./img/trofeo.png" style="margin-top: -5px; padding-right: 10px"/>'.
+            $row['rango'].
+          '</div>'.
+        '</div>';
+      }
+    ?>
 
-    <div id="destacados">
-      <div class="destacados-img">
-        <img src="https://i.imgur.com/7W2fJbX.png" />
-      </div>
-
-      <div class="destacados-user" style="font-weight: bolder; margin-top: 7px">
-        <img
-          src="./img/perfil.png"
-          style="margin-top: -5px; padding-right: 10px"
-        />LUFantasie
-      </div>
-
-      <div class="destacados-user">
-        <img
-          src="./img/trofeo.png"
-          style="margin-top: -5px; padding-right: 10px"
-        />Administrador
-      </div>
-    </div>
   </div>
 
   <div id="hobba">
@@ -79,7 +79,7 @@
     </div>
 
     <div class="boxplacas">
-      <div
+      <!-- <div
         id="furnis"
         class="btn btn-lg btn-danger"
         role="button"
@@ -88,34 +88,15 @@
         title="Dismissible popover"
       >
         <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
-      <div id="furnis">
-        <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
-      <div id="furnis">
-        <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
-      <div id="furnis">
-        <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
-      <div id="furnis">
-        <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
-      <div id="furnis">
-        <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
-      <div id="furnis">
-        <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
-      <div id="furnis">
-        <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
-      <div id="furnis">
-        <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
-      <div id="furnis">
-        <img src="https://www.habbocreate.com/images/furni/furni7749.gif" />
-      </div>
+      </div> -->
+      <?php
+        $data = $db->query("SELECT * FROM ropa_placas ORDER BY id LIMIT 10");
+        foreach ($data as $row) {
+          echo '<div id="u-placas" data-toggle="popover" data-trigger="hover" data-content="'.$row['descripcion'].'" title="'.$row['titulo'].'">';
+            echo '<img src="'.$row['imagen'].'" />';
+          echo '</div>';
+        }
+      ?>
     </div>
   </div>
 
@@ -133,36 +114,17 @@
     </div>
 
     <div class="boxplacas">
-      <div id="u-placas">
+      <?php
+        $data = $db->query("SELECT * FROM rares_placas ORDER BY id DESC LIMIT 10");
+        foreach ($data as $row) {
+          echo '<div id="u-placas" data-toggle="popover" data-trigger="hover" data-content="'.$row['descripcion'].'" title="'.$row['titulo'].'">';
+            echo '<img src="'.$row['imagen'].'" />';
+          echo '</div>';
+        }
+      ?>
+      <!-- <div id="u-placas">
         <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
-      <div id="u-placas">
-        <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
-      <div id="u-placas">
-        <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
-      <div id="u-placas">
-        <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
-      <div id="u-placas">
-        <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
-      <div id="u-placas">
-        <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
-      <div id="u-placas">
-        <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
-      <div id="u-placas">
-        <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
-      <div id="u-placas">
-        <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
-      <div id="u-placas">
-        <img src="https://www.habborator.org/badges/badges/GLB.gif" />
-      </div>
+      </div> -->
     </div>
   </div>
 

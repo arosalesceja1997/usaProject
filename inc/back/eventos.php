@@ -14,11 +14,11 @@
                   // echo '<p>Descripción del evento</p>';
                   echo $row['descripcion'];
                 echo'</div>';
-                echo '<a href="">';
-                  echo '<div class="item-texto3" onclick="verMas('.$row['id'].')">';
+                echo '<div>';
+                  echo '<div class="item-texto3 btn-x" id="'.$row['id'].'">';
                     echo '<p>Ver más</p>';
                   echo '</div>';
-                  echo '</a>';
+                echo '</div>';
               echo '</div>';
             echo '</div>';
           }
