@@ -358,9 +358,12 @@
             <div id="img-title"><img
                 src="https://1.bp.blogspot.com/-KNfZH2uRYKQ/XK0oYpacyqI/AAAAAAABOsg/JvXUkVqmuU8eHE0eOZtjVosY2PiIEqGKQCKgBGAs/s1600/Image%2B524.png">
             </div>
-            <div id="descrip">
+            <div id="descrip" class="btn-left">
               <p id="des1">Últimas noticias - Hobba Hotel</p>
               <p id="des2">Toda la información al alcance de tus manos</p>
+              <div>
+                <input type="button" value="Ver todo" class="btn btn-primary">
+              </div>
             </div>
           </div>
 
@@ -399,6 +402,9 @@
             <div id="descrip">
               <p id="des1">TOP Patos - LUFantasie</p>
               <p id="des2">Toda la información al alcance de tus manos</p>
+              <div>
+                <input type="button" value="Ver todo" class="btn btn-warning">
+              </div>
             </div>
           </div>
           <div style="margin-left: 20px;">
@@ -426,6 +432,9 @@
             <div id="descrip">
               <p id="des1">Puntos Gymkhana - Hobba Hotel</p>
               <p id="des2">Toda la información al alcance de tus manos</p>
+              <div>
+                <input type="button" value="Ver todo" class="btn btn-warning">
+              </div>
             </div>
           </div>
           <div style="margin-left: 20px;">
@@ -506,14 +515,14 @@
               <div id="dataInfo" class="col-12">
               </div>
             </div>
-            <div class="row mt-5">
-              <div id="dataFecha" class="col-6 text-left">
-              </div>
-              <div id="dataEncargado" class="col-6 text-right">
-              </div>
-            </div>
           </div>
           <div class="modal-footer">
+            <div class="mt-2 c-ft">
+                <div id="dataFecha" class="text-left xleft">
+                </div>
+                <div id="dataEncargado" class="text-right xrigh">
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -578,13 +587,6 @@
 
           });
         });
-        // $('#ModalAgregar').modal('hide');
-        
-        // if ($('.modal-backdrop').is(':visible')) {
-        //   $('body').removeClass('modal-open'); 
-        //   $('.modal-backdrop').remove(); 
-        // };
-
 
         $(".owl-one").owlCarousel({
           loop: true,
